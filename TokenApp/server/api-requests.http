@@ -1,0 +1,111 @@
+# Initialize the NFT Marketplace
+POST http://localhost:5000/api/initializeNFTMarketplace
+Content-Type: application/json
+
+{
+    "name": "GameNFT",
+    "symbol": "GNFT"
+}
+
+###
+
+# Create Seller Account
+POST http://localhost:5000/api/createSellerAccount
+Content-Type: application/json
+
+
+{
+  "selleraccountId": "seller123",
+  "name": "John Doe",
+  "phoneNumber": "1234567890",
+  "balance": "5000"
+}
+
+###
+
+# Get Seller Account by ID
+GET http://localhost:5000/api/getSellerAccount/seller123
+
+###
+
+# Mint NFT
+POST http://localhost:5000/api/mint
+Content-Type: application/json
+
+{
+    "nftId": "nft123",
+    "tokenURI": "http://example.com/nft123456",
+    "listed": true,
+    "price": 100,
+    "selleraccountId": "seller123"
+}
+
+###
+
+# Get Minted NFT by ID
+GET http://localhost:5000/query/nft123456
+
+###
+
+# Get All Minted NFTs
+GET http://localhost:5000/getAllMintedNFTs
+
+###
+
+# List NFT for Sale
+GET http://localhost:5000/listNFTsForSale
+# Content-Type: application/json
+
+# {
+#     "nftId": "nft123"
+# }
+
+###
+
+# Create Buyer Account
+POST http://localhost:5000/generateBuyerAccount
+Content-Type: application/json
+
+{
+    "buyerId": "buyer123",
+    "buyerName": "Baekhyun",
+    "buyerPhoneNumber": "34344423232"
+}
+
+###
+
+# Get Buyer Account Data
+GET http://localhost:5000/readBuyerAccount/buyer123
+
+###
+
+# Mint Tokens for Buyer
+POST http://localhost:5000/mint-tokens
+Content-Type: application/json
+
+{
+    "amount": 2000,
+    "buyerId": "buyer123",
+    "buyerName": "Baekhyun"
+}
+
+###
+
+# Get Buyer Balance
+GET http://localhost:5000/balance/buyer123
+
+###
+
+# Purchase NFT
+POST http://localhost:5000/purchase
+Content-Type: application/json
+
+{
+    "buyerId": "buyer123",
+    "nftId": "nft123456"
+}
+
+###
+
+# Read Purchased NFTs for Buyer
+GET http://localhost:5000/purchasedNFTs/buyer123

@@ -81,6 +81,38 @@ Deploy the chaincode to the channel by running the following command:
 ```
 ./network.sh deployCC -ccn token -ccp ../token-erc-20/chaincode-go/ -ccl go
 ```
+## Functions
+
+### 1. **Initialize NFT Marketplace**
+   - Initializes the NFT marketplace on the blockchain. It sets up the marketplace's basic information, such as its name and symbol.
+
+### 2. **Create Seller Account**
+   - Creates a new seller account, allowing the seller to participate in the marketplace. This includes storing the seller’s details like their name, phone number, and balance.
+
+### 3. **Get Seller Account Details**
+   - Retrieves the details of an existing seller account based on the seller’s ID. This includes information such as the seller’s name, phone number, and balance.
+
+### 4. **Mint NFT**
+   - Mints a new NFT (Non-Fungible Token) and associates it with a seller. This process involves setting the token’s URI, price, and its listing status (whether it is for sale or not).
+
+### 5. **Query NFT**
+   - Queries the blockchain for a specific NFT using its NFT ID. It returns the details of that particular NFT, including its token URI, price, and listing status.
+
+### 6. **Get All Minted NFTs**
+   - Retrieves a list of all NFTs that have been minted within the marketplace, showing each NFT’s details like token URI, price, and seller account.
+
+### 7. **List NFTs for Sale**
+   - Fetches all NFTs that are currently listed for sale in the marketplace. It returns a list of NFTs that are available for potential buyers.
+
+### 8. **Get Client Account Balance**
+   - Retrieves the current balance of a client (either a seller or a buyer). This function checks how much funds are available in the client’s account.
+
+### 9. **Generate Buyer Account**
+   - Creates a new buyer account, allowing a buyer to participate in the marketplace. This includes storing the buyer’s details such as name and phone number.
+
+### 10. **Get Buyer Account Details**
+   - Retrieves the details of an existing buyer account based on the buyer’s ID. This includes the buyer’s name and phone number.
+
 Note: Replace ../token-erc-20/chaincode-go/ with your actual chaincode path.
 
 Step 5: Update Configuration

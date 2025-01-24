@@ -81,6 +81,33 @@ Deploy the chaincode to the channel by running the following command:
 ```
 ./network.sh deployCC -ccn token -ccp ../token-erc-20/chaincode-go/ -ccl go
 ```
+
+Note: Replace ../token-erc-20/chaincode-go/ with your actual chaincode path.
+
+Step 5: Update Configuration
+Verify and adjust the directory paths in the profile.js file to match your local setup. Ensure paths for:
+```
+TLS certificates: tlsCertPath
+User credentials: certPath, keyDirectoryPath
+Peer and network configuration: peerEndpoint, peerHostAlias
+```
+Step 6: Start the Backend Server
+Navigate to the backend folder:
+```
+cd Token/server/
+```
+Run the backend server:
+```
+node app.js
+```
+Step 7: Test the Backend API
+Use Postman or any API testing tool to test the backend functionalities. Test the following endpoints:
+
+Minting NFTs
+Transferring ERC20 tokens
+Purchasing NFTs
+
+
 ## Functions
 
 ### 1. **Initialize NFT Marketplace**
@@ -112,28 +139,3 @@ Deploy the chaincode to the channel by running the following command:
 
 ### 10. **Get Buyer Account Details**
    - Retrieves the details of an existing buyer account based on the buyer’s ID. This includes the buyer’s name and phone number.
-
-Note: Replace ../token-erc-20/chaincode-go/ with your actual chaincode path.
-
-Step 5: Update Configuration
-Verify and adjust the directory paths in the profile.js file to match your local setup. Ensure paths for:
-```
-TLS certificates: tlsCertPath
-User credentials: certPath, keyDirectoryPath
-Peer and network configuration: peerEndpoint, peerHostAlias
-```
-Step 6: Start the Backend Server
-Navigate to the backend folder:
-```
-cd Token/server/
-```
-Run the backend server:
-```
-node app.js
-```
-Step 7: Test the Backend API
-Use Postman or any API testing tool to test the backend functionalities. Test the following endpoints:
-
-Minting NFTs
-Transferring ERC20 tokens
-Purchasing NFTs
